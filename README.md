@@ -2,4 +2,4 @@
 
 ### 1) Create a functional design
 
-![Schema](weatherApp/Untitled Diagram.drawio.png)
+![Schema](/diagram.png)
