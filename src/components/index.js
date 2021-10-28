@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Displays the date and time for the forecast
 import Clock from './Clock';
@@ -7,16 +7,22 @@ import TimeZone from './TimeZone';
 // Search bar
 import SearchBar from './SearchBar';
 
-const index = () => {
+
+const Index = () => {
+    const [city, setCity] = useState('')
+
+    console.log(city);
+
     return (
         <div className="container">
             <div className="current-info">
-              <Clock />
-              <SearchBar />
-              <TimeZone />
-            </div>            
+                <Clock />
+                <SearchBar onFormSubmit={setCity} />
+                <TimeZone />
+            </div>
         </div>
     )
 }
 
-export default index;
+
+export default Index;

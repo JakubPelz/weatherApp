@@ -1,5 +1,5 @@
 import { GET_WEATHER, SET_ERROR} from '../types';
-import { openweathermap_api_key } from '../../config.json';
+import { openweathermap_api_key } from '../../../config.json';
 
 export const getWeather = (city, onSuccess = () => {}, onError = () => {}) => {
     return async dispatch => {
