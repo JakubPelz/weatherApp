@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Displays the date and time for the forecast
-import Date from './Date';
+import Clock from './Clock';
 // Displays GEO zone
 import TimeZone from './TimeZone';
 // Search bar
@@ -11,7 +11,7 @@ const index = () => {
     return (
         <div className="container">
             <div className="current-info">
-              <Date />
+              <Clock />
               <SearchBar />
               <TimeZone />
             </div>            
