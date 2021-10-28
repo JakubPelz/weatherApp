@@ -1,11 +1,18 @@
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { getWeather } from './components/store/actions/weatherActions';
+
 import Index from './components';
 import Forecast from './components/Forecast';
 
+const App = () => {
+  const dispatch = useDispatch();
 
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  useEffect(() => {
+    dispatch(getWeather('London'));
+  }, [dispatch]);
 
-function App() {
   return (
     <>
       <div className="App">
