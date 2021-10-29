@@ -1,9 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 const Today = () => {
-    const weather = useSelector(state => state.weather)
-    
+
     return (
         <div className="today" id="current-temp">
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" className="w-icon" />
