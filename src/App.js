@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Index from './components';
-import Forecast from './components/Forecast';
+import DaysForecast from './components/DaysForecast';
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <div className="App">
         <Index />
       </div>
-      <Forecast />
+      <DaysForecast />
     </>
   );
 }
