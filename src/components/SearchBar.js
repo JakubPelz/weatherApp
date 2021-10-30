@@ -4,14 +4,13 @@ import { getWeather } from './store/actions/weatherActions';
 import * as BiIcons from "react-icons/bi";
 
 
-
 const SearchBar = () => {
     const [term, setTerm] = useState('')
     const dispatch = useDispatch();
-    
-    useEffect(() => { 
+
+    useEffect(() => {
         dispatch(getWeather('Olomouc'));
-    }, [dispatch]); 
+    }, [dispatch]);
 
     const onSubmit = (event) => {
         event.preventDefault();

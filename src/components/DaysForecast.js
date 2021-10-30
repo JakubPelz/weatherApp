@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
 import { getForecast } from './store/actions/forecastActions';
@@ -11,14 +11,13 @@ const DaysForecast = () => {
     const longtitude = weather.data === null ? 17.25 : weather.data.coord.lon;
     const latitude = weather.data === null ? 49.59 : weather.data.coord.lat;
 
-    const fetchData = () => {
-        dispatch(getForecast(longtitude,latitude)); 
-    };
-    
-    //repair useEffect
-    useEffect(() => {
+    const fetchData = useCallback(() => {
+        if (longtitude && latitude) dispatch(getForecast(latitude, longtitude));
+        }, [latitude, longtitude]);
+
+        useEffect(() => {
         fetchData();
-    }, [dispatch]); // eslint-disable-line react-hooks/exhaustive-deps
+        }, [fetchData]);
 
     return (
         <div className="future-forecast">
