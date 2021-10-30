@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { second_api_key } from './config2.json';
 import { useSelector } from 'react-redux';
+import moment from 'moment';
 
 const DaysForecast = () => {
     const [finalData, setFinalData] = useState([]);
@@ -23,12 +24,28 @@ const DaysForecast = () => {
         fetchData();
     }, []);
 
-    console.log(finalData)
-    console.log(finalData.daily === undefined ? '' : finalData.daily.length)
+    //get OUT
+    //console.log(finalData)
+    //console.log(finalData.daily === undefined ? '' : finalData.daily.length)
+
+    // ADD if else state
     return (
-        <>
-         
-        </>
+        <div className="future-forecast">
+            {finalData.daily === undefined ? ('We are loading data from server ...') : (
+                <>
+                    {finalData.daily.map((day, idx) => (
+                        <div className="weather-forecast" key={idx}>
+                        <div className="weather-forecast-item">
+                            <div className="day">{moment(day.dt * 1000).format('dddd')}</div>
+                            <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt="weather icon" className="w-icon" />
+                            <div className="temp">{day.temp.night}&#176;C</div>
+                            <div className="temp">{day.temp.day}&#176;C</div>
+                        </div>
+                    </div>
+                    ))}
+                </>
+            )}
+        </div>
     )
 }
 
