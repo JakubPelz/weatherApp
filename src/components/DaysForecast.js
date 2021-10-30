@@ -1,35 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { second_api_key } from './config2.json';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
+import { getForecast } from './store/actions/forecastActions';
 
 const DaysForecast = () => {
-    const [finalData, setFinalData] = useState([]);
-    const weather = useSelector(state => state.weather)
+    const dispatch = useDispatch();
+    
+    const forecast = useSelector(state => state.forecast);
+    const weather = useSelector(state => state.weather);
     const longtitude = weather.data === null ? 17.25 : weather.data.coord.lon;
     const latitude = weather.data === null ? 49.59 : weather.data.coord.lat;
 
     const fetchData = () => {
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longtitude}&exclude=hourly,minutely,alerts&units=metric&appid=${second_api_key}`)
-            .then((res) => res.json())
-            .then((data) => {
-                setFinalData(data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        dispatch(getForecast(longtitude,latitude)); 
     };
     
     //repair useEffect
     useEffect(() => {
         fetchData();
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [dispatch]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <div className="future-forecast">
-            {finalData.daily === undefined ? ('We are loading data from server ...') : (
+            {forecast.data === null ? ('We are loading data from server ...') : (
                 <>
-                    {finalData.daily.map((day, idx) => {
+                    {forecast.data.daily.map((day, idx) => {
                         if (idx === 0) {
                             return (
                                 <div className="weather-forecast" key={idx}>

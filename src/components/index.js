@@ -6,16 +6,19 @@ import Clock from './Clock';
 import TimeZone from './TimeZone';
 // Search bar
 import SearchBar from './SearchBar';
+// Table forecast "Will be on click"
+import TableForecast from './TableForecast';
+
 
 
 const Index = () => {
-
     return (
         <div className="container">
             <div className="current-info">
-                <Clock />
-                <SearchBar />
-                <TimeZone />
+                    <Clock />
+                    <SearchBar />
+                    <TableForecast />
+                    <TimeZone />
             </div>
         </div>
     )
