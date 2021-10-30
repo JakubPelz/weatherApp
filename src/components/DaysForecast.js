@@ -19,30 +19,43 @@ const DaysForecast = () => {
                 console.log(error);
             });
     };
-
+    
+    //repair useEffect
     useEffect(() => {
         fetchData();
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    //get OUT
-    //console.log(finalData)
-    //console.log(finalData.daily === undefined ? '' : finalData.daily.length)
-
-    // ADD if else state
     return (
         <div className="future-forecast">
             {finalData.daily === undefined ? ('We are loading data from server ...') : (
                 <>
-                    {finalData.daily.map((day, idx) => (
-                        <div className="weather-forecast" key={idx}>
-                        <div className="weather-forecast-item">
-                            <div className="day">{moment(day.dt * 1000).format('dddd')}</div>
-                            <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt="weather icon" className="w-icon" />
-                            <div className="temp">{day.temp.night}&#176;C</div>
-                            <div className="temp">{day.temp.day}&#176;C</div>
-                        </div>
-                    </div>
-                    ))}
+                    {finalData.daily.map((day, idx) => {
+                        if (idx === 0) {
+                            return (
+                                <div className="weather-forecast" key={idx}>
+                                    <div className="today">
+                                        <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@4x.png`} alt="weather icon" className="w-icon" />
+                                        <div className="other">
+                                            <div className="day">{moment(day.dt * 1000).format('dddd')}</div>
+                                            <div className="temp">Night - {day.temp.night}&#176;C</div>
+                                            <div className="temp">Day - {day.temp.day}&#176;C</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        } else {
+                            return (
+                                <div className="weather-forecast" key={idx}>
+                                    <div className="weather-forecast-item">
+                                        <div className="day">{moment(day.dt * 1000).format('dddd')}</div>
+                                        <img src={`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`} alt="weather icon" className="w-icon" />
+                                        <div className="temp">Night - {day.temp.night}&#176;C</div>
+                                        <div className="temp">Day - {day.temp.day}&#176;C</div>
+                                    </div>
+                                </div>
+                            )
+                        }
+                    })}
                 </>
             )}
         </div>
