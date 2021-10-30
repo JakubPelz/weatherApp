@@ -1,5 +1,5 @@
 import { GET_FORECAST, SET_ERROR} from '../types';
-import { second_api_key } from '../../config2.json';
+import { second_api_key } from '../../config.json';
 
 export const getForecast = (latitude, lontitude, onSuccess = () => {}, onError = () => {}) => {
     return async dispatch => {

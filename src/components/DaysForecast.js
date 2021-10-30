@@ -13,12 +13,12 @@ const DaysForecast = () => {
 
     const fetchData = useCallback(() => {
         if (longtitude && latitude) dispatch(getForecast(latitude, longtitude));
-        }, [latitude, longtitude]);
+        }, [latitude, longtitude]);// eslint-disable-line react-hooks/exhaustive-deps
 
         useEffect(() => {
         fetchData();
         }, [fetchData]);
-
+     
     return (
         <div className="future-forecast">
             {forecast.data === null ? ('We are loading data from server ...') : (

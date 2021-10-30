@@ -65,6 +65,16 @@ body{
     border: 1px solid #eee;
 }
 
+.current-info .table{
+    position: flex;
+    flex-direction: column;
+    background: rgba(24,24,27, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 1px solid #eee;
+}
+
 .current-info .others .weather-item{
     display: flex;
     justify-content: space-between;
@@ -137,18 +147,18 @@ body{
 }
 /* Button */
 .button-center {
+  position: flex;
   padding-top: 50px;
 }
 
 .btn-1 {
   width: 120px;
   height: 40px;
-  border: none;
+  border: 1px solid #eee;
   color: white;
-  background-color: rgba(105, 117, 117, 0.2);
-  box-shadow: inset 0 0 0 0 #E1E1E1;
-  transition: ease-out 0.3s;
-  font-size: 1rem;
+  background: rgba(24,24,27, 0.6);
+  border-radius: 10px;
+  font-size: 0.9rem;
   outline: none;
 }
 

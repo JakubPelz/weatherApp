@@ -6,7 +6,7 @@ const WeatherItems = () => {
     const weather = useSelector(state => state.weather)
 
     return (
-        <div className="others" id="current-weather-items">
+        <div className="others">
             <div className="weather-item">
                 <div>Humidity</div>
                 <div>{weather.data === null ? '' : weather.data.main.humidity}<span>%</span></div>
