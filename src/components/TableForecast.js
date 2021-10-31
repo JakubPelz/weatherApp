@@ -6,7 +6,7 @@ const TableForecast = () => {
     const forecast = useSelector(state => state.forecast)
     return (
         <div className="table">
-            {forecast.data === null ? ('We are loading data from server ...') : (
+            {forecast.data === null ? ('Internet connection lost') : (
                 <table>
                     <thead>
                         <tr>

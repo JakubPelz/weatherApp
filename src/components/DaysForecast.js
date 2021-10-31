@@ -21,7 +21,7 @@ const DaysForecast = () => {
      
     return (
         <div className="future-forecast">
-            {forecast.data === null ? ('We are loading data from server ...') : (
+            {forecast.data === null ? ('Internet connection lost') : (
                 <>
                     {forecast.data.daily.map((day, idx) => {
                         if (idx === 0) {
