@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import WeatherItems from './WeatherItems';
 
 const Clock = () => {
     const [dateTime, setDateTime] = useState(new Date());
@@ -13,15 +12,14 @@ const Clock = () => {
 
 
     return (
-        <div className="date-container">
+        <div>
             <div className="time">
                 {`${dateTime.toLocaleDateString()}`}
             </div>
             <div className="date">
                 {`${dateTime.toLocaleTimeString()}`}
             </div>
-            <WeatherItems />
-        </div>
+        </div>   
     )
 };
 

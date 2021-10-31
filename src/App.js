@@ -6,7 +6,7 @@ import DaysForecast from './components/DaysForecast';
 const App = () => {
   return (
     <>
-        <div className="App">
+        <div>
           <Index />
         </div>
         <DaysForecast />
