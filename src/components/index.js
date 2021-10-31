@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CitiesData from './data/city.list.json';
 
 // Displays the date and time for the forecast
 import Clock from './Clock';
@@ -15,7 +16,7 @@ const Index = () => {
         <div className="container">
             <div className="current-info">
                 <Clock />
-                <SearchBar />
+                <SearchBar data={CitiesData} placeholder="Type your City..." />
                 <div>
                     <TimeZone />
                     <div className="button-center">
