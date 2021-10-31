@@ -24,4 +24,10 @@
       1. **Data:** here is a json for loading cities to search.
       2. **Store:** contains two reducers for fetch data from openweatherapi.
       3. **Components:** other components contained in the components folder are loaded directly via components / index.js.
+
+
+**Plans for the future**
+
+>In the application, I would program another of these components with respect to time: user geolocation, forecast development as a graph.
+>Overwrite the application in Typescript
                       
