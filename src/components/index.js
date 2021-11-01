@@ -13,21 +13,30 @@ const Index = () => {
     return (
         <div className="container">
             <div className="current-info">
-             < div className="date-container">
-                <Clock />
-                <WeatherItems />
-                <SearchBar data={CitiesData} placeholder="Type your City..." />
-             </div>
-            <div>
-            
-                    <TimeZone />
-                    <div className="button-center">
-                        <button className="btn-1" onClick={() => setShow(!show)}>Table Forecast</button>
+                <div className="date-container">
+                    <Clock />
+                    <WeatherItems />
+                </div>
+                <div className="current-info">
+                    <div className="date-container">
+                        <SearchBar data={CitiesData} placeholder="Type your City..." />
                     </div>
                 </div>
-                {
-                    show ? null : <TableForecast />
-                }
+                <div className="current-info">
+                    <div className="date-container">
+                        <TimeZone />
+                        <div className="button-center">
+                            <button className="btn-1" onClick={() => setShow(!show)}>Table Forecast</button>
+                        </div>
+                    </div>
+                    <div className="current-info">
+                        <div className="table-position">
+                            {
+                                show ? null : <TableForecast />
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
