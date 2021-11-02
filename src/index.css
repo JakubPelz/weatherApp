@@ -79,7 +79,7 @@ body{
 .future-forecast{
     background: rgba(24,24,27,0.8);
     padding: 25px;
-    position: relative;
+    position: absolute;
     bottom: 0px;
     display: flex;
     color:white;
@@ -252,6 +252,12 @@ body{
       padding: 5px;
       text-align: center;
   }
+@media screen and (min-width: 900px), (orientation: landscape) {
+    .future-forecast{
+        position: relative;       
+    }
+  }
+
 @media only screen and  (max-width:1220px){
     .container{
         padding: 10px;
