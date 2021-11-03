@@ -11,11 +11,12 @@ import WeatherItems from './WeatherItems';
 const Index = () => {
     const [show, setShow] = useState(true)
     return (
-        <div className="container">
-            <div className="current-info">
+            <div className="three-columns">
+                <div className="current-info">
                 <div className="date-container">
                     <Clock />
                     <WeatherItems />
+                    </div>
                 </div>
                 <div className="current-info">
                     <div className="date-container">
@@ -38,7 +39,6 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

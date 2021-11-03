@@ -13,11 +13,18 @@ body{
     color: white;
 }
 
+.three-columns {
+    display: flex;
+    min-height: 100vh;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
 .current-info{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 20px 20px 0px 20px;
+    padding: 20px;
 }
 
 .date-container{
@@ -78,8 +85,6 @@ body{
 
 .future-forecast{
     background: rgba(24,24,27,0.8);
-    padding: 25px;
-    position: absolute;
     bottom: 0px;
     display: flex;
     color:white;
@@ -94,6 +99,7 @@ body{
     align-items: center;
     justify-content: center;
     border: 1px solid #eee;
+    margin: 20px;
     border-radius: 10px;
     padding:15px;
     padding-right: 40px;
@@ -239,7 +245,6 @@ body{
   /* TABLE STYLE */
   .table-position {
       display: flex;
-      height: 580px;
   }
 
 
@@ -251,11 +256,6 @@ body{
   table tbody tr td {
       padding: 5px;
       text-align: center;
-  }
-@media screen and (min-width: 900px), (orientation: landscape) {
-    .future-forecast{
-        position: relative;       
-    }
   }
 
 @media only screen and  (max-width:1220px){
@@ -271,7 +271,6 @@ body{
     }
     
     .future-forecast{
-        display: relative;
         justify-content: start;
         align-items: none;
         overflow-y: scroll;
@@ -317,7 +316,7 @@ body{
 }
 
 @media only screen and  (max-width:800px){
-    .container{
+    .three-columns{
         padding: 10px;
     }
     table {
@@ -325,10 +324,9 @@ body{
     }
     
     .current-info {
-        margin: 0px;
+        padding: 0px;
     }
     .future-forecast{
-        display: relative;
         justify-content: start;
         align-items: none;
         overflow-y: scroll;
@@ -372,4 +370,3 @@ body{
       }
 
 }
-
