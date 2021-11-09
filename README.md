@@ -30,4 +30,6 @@
 
 >In the application, I would program another of these components with respect to time: user geolocation, forecast development as a graph.
 >Overwrite the application in Typescript
+
+The application is uploaded at https://weather-flax.vercel.app/
                       
